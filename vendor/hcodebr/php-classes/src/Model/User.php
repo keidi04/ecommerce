@@ -118,5 +118,14 @@ class User extends Model {
 		$this->setData($results[0]);
 
 	}
+
+	public function delete()
+	{
+		$sql = new Sql();
+
+		$sql->query("CALL sp_users_delete(:iduser)", array(
+			":iduser"=>$this->getiduser()
+		));
+	}
 }
 ?>
