@@ -35,7 +35,7 @@ class Sql {
 
 	private function bindParam($statement, $key, $value)
 	{
-
+	
 		$statement->bindParam($key, $value);
 
 	}
