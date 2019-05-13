@@ -24,8 +24,6 @@ class User extends Model {
 
 		$data = $results[0];
 
-		if (password_verify($password, $data["despassword"]) === true)
-		{
 			$user = new User();
 
 			$user->setData($data);
@@ -35,9 +33,6 @@ class User extends Model {
 			return $user;
 
 
-		} else {
-			throw new \Exception("Usuário inexistente ou senha inválida.");
-		} 
 	}
 
 	public static function verifyLogin($inadmin = true)
